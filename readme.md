@@ -73,6 +73,7 @@ select * from products
 
 update products set productPrice = '25.00'
 where productId = 2
+
 select * from products
 
 ## create a query that shows text about the prices
@@ -84,46 +85,3 @@ when productPrice < 25 then 'the price is less than 25'
 end as productText
 from products
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-
-
- 
