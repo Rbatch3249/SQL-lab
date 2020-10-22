@@ -49,6 +49,67 @@ select AVG(IMDBScore),MIN(IMDBScore),MAX(IMDBScore) from Movies;
 
 select Rating, AVG(IMDBScore),MIN(IMDBScore),MAX(IMDBScore) from Movies having count(Rating)>1;
 
+## create a query where any IMDBScore below 5 gets deleted from the table
+ delete from movies where IMDBScore < 5; 
+ 
+ ## Create a table that hold productId, 
+ productName, productPrice, and productSize
+ 
+create table products
+ (
+ productId int,
+ productName varchar(10),
+productPrice decimal(4,2),
+ productSize char(1)
+ );
+insert into products (productId, productName, productPrice, productSize)
+ Values(1,'Popcorn',23.00,'S'),(2,'Popcorn',16.00,'M'),
+(3,'Popcorn', 27.00, 'L'),(4,'Soda',10.99,'S'),(5,'Soda', 14.99,'M'),
+(6,'Soda',21.99,'L');
+
+select * from products
+
+## the price is wrong for Medium sized popcorn. Update the table so the correct price is 25.00
+
+update products set productPrice = '25.00'
+where productId = 2
+select * from products
+
+## create a query that shows text about the prices
+select productId, productPrice,
+case
+when productPrice > 25 then 'the price is greater than 20'
+when productPrice = 25 then ' the price is 25'
+when productPrice < 25 then 'the price is less than 25'
+end as productText
+from products
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+ 
+
+
+
 
 
 
